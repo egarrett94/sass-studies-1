@@ -6,6 +6,9 @@
 @import "partials/variables";
 @import "partials/mixins";
 
+//can also import like this:
+//@import "partials/variables", "partials/mixins";
+
 // generated as normal css imports
 // @import url();
 // @import "http://";
@@ -14,7 +17,8 @@
 
 //sass imports allow sass and scss files 
 
-
+@include google-font("Alegraya+Sans");
+@include google-font("Titillium+Web");
 @include fancy-links;
 
 body {
@@ -36,7 +40,7 @@ p {
 
 a {
 	color: $link-color;
-	font-weight: bold;
+	// font-weight: bold;
 }
 
 .warning-button {

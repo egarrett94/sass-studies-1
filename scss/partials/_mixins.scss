@@ -1,3 +1,13 @@
+@mixin google-font($font) {
+	//this will format the google url into something
+	//that the .scss file will be able to read in the 
+	//css formatted import
+	$font: unquote($font);
+	//interpolate the $font so it is separated from the url
+	//can only use this #{format} with css format imports
+	@import url(https://fonts.googleapis.com/css?family=#{$font});
+}
+
 @mixin warning {
 	background-color: orange;
 	color: #fff;
