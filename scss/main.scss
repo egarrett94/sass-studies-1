@@ -81,6 +81,20 @@ a {
 	padding: 8px 12px;
 }
 
+.cta-button {
+	// @extend .headline.large; //OK syntax
+	// @extend .headline .large; //NOT OK syntax
+	@extend .warning-button;
+	@extend .error; //can have multiple @extend directives
+	@include rounded;
+	font-weight: bold;
+}
+
+.super-cta-button {
+	@extend .cta-button;
+	font-size: em(20px);
+}
+
 #header {
 	@include box($border: 1px solid #fff, $radius: 10px);
 	@include box-shadow(2px 0px 4px #999, 1px 1px 6px $secondary-color);
