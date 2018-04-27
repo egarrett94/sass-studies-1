@@ -7,10 +7,11 @@ $link-color: $secondary-color;
 $menu-item: white;
 
 // font faces
-$text-font: 'Alegreya Sans', Arial, sans-serif;
+$text-font: 'Open Sans', Arial, sans-serif;
 $headline-font: 'Titillium Web', Georgia, serif;
 
 // sizes
 $content-width: 960px;
 $header-height: 60px;
 $footer-height: 90px;
+$col: col-width($columns: 8);
