@@ -1,5 +1,19 @@
-@import "variables";
-@import "mixins";
+//sass looks for these files by using the sass preprocessor 
+//and it looks at the current directory you are in 
+//you can't have a _variables partial and a variables.scss 
+//because then the preprocessor doesn't know which one you mean
+//so you need to keep an eye on the naming conventions
+@import "partials/variables";
+@import "partials/mixins";
+
+// generated as normal css imports
+// @import url();
+// @import "http://";
+// @ import "filename.css"
+// @import "style-screen" screen; <-- this is a media query
+
+//sass imports allow sass and scss files 
+
 
 @include fancy-links;
 
@@ -22,11 +36,20 @@ p {
 
 a {
 	color: $link-color;
+	font-weight: bold;
 }
 
 .warning-button {
 	@include warning;
 	padding: 8px 12px;
+}
+
+@include apply-to-ie-6 {
+	//add any styles / code only wanted on ie6
+	body {
+		font-size: 125%;
+		//now only in ie6 will the font size be larger than usual
+	}
 }
 
 #header {
@@ -53,7 +76,7 @@ a {
 }
 
 #main {
-
+	
 	width: $content-width;
 	margin-left: auto;
 	margin-right: auto;

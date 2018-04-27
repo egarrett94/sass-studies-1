@@ -17,12 +17,16 @@ p {
   font-family: Verdana, Arial, sans-serif; }
 
 a {
-  color: #f27731; }
+  color: #f27731;
+  font-weight: bold; }
 
 .warning-button {
   background-color: orange;
   color: #fff;
   padding: 8px 12px; }
+
+* html body {
+  font-size: 125%; }
 
 #header {
   border-radius: 10px;
