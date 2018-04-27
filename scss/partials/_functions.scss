@@ -12,3 +12,12 @@
 @function col-width($columns: 12, $page-width: 100%, $gap: 1%) {
 	@return ($page-width - $gap*($columns - 1)) / $columns;
 }
+
+//strips unit of any value we define--if we pass in 
+//2px it'll output 2
+@function strip-unit($value) {
+	//$value*0 removes the unit bc it makes it 0
+	//and then you add one to make it valid again
+	@return $value / ($value*0 + 1);
+}
+

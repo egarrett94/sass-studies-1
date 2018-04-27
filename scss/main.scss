@@ -21,6 +21,25 @@
 @include google-font("Titillium+Web");
 @include fancy-links;
 
+@include apply-to-ie-6 {
+	//add any styles / code only wanted on ie6
+	body {
+		font-size: 125%;
+		//now only in ie6 will the font size be larger than usual
+	}
+}
+
+.error {
+	color: red;
+}
+
+.critical-error {
+	//this inherits stylings from the error class
+	@extend .error;
+	bottom: 1px solid red;
+	font-weight: bold;
+}
+
 body {
   font-family: sans-serif;
   color: $text-color;
@@ -60,14 +79,6 @@ a {
 .warning-button {
 	@include warning;
 	padding: 8px 12px;
-}
-
-@include apply-to-ie-6 {
-	//add any styles / code only wanted on ie6
-	body {
-		font-size: 125%;
-		//now only in ie6 will the font size be larger than usual
-	}
 }
 
 #header {
