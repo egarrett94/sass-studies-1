@@ -1,3 +1,15 @@
+//--mixins vs extends--
+// using mixins generate larger css files which can limit the speed
+// of your page load
+
+// using extends limitations: media queries (no base classes outside media query)
+// and can only use single selectors rather than stacking like (.foo .bar)
+
+// if you g-zip your css files, mixins perform better than the extends. 
+// g-zipping reduces page load time
+
+
+
 //sass looks for these files by using the sass preprocessor 
 //and it looks at the current directory you are in 
 //you can't have a _variables partial and a variables.scss 
@@ -40,9 +52,18 @@
 	font-weight: bold;
 }
 
+$contrast: high;
+
 body {
   font-family: sans-serif;
-  color: $text-color;
+  @if $contrast == high {
+	color: black;
+  } @else if $contrast == low {
+  	color: #999;
+  } @else {
+  	color: $text-color;
+  }
+  
   // color: rgb(10, 15, 50);
   // background-color: hsl(60, 50%, 100%);
   font-size: em(18px); //this makes font-size on .css file to 1.125 em
@@ -76,6 +97,21 @@ a {
 	}
 }
 
+//extend only class -- doesn't generate css code
+//from this selector itself
+%highlight {
+	font-style: italic;
+}
+//calling on the extend only class ^^ 
+.sub-title {
+	@extend %highlight;
+	@extend .foo !optional; //if !optional wasn't here this would break
+							//the code because there is no .foo selector
+							//but since we have !optional the preprocessor 
+							//ignores that it's there if it doesn't work
+	font-size: 20px;
+}
+
 .warning-button {
 	@include warning;
 	padding: 8px 12px;
@@ -90,6 +126,10 @@ a {
 	font-weight: bold;
 }
 
+//"@extend" cannot be within a media query if the 
+//class it's extending is not within the media query itself
+//but you can extend classes created within a media query 
+//outside the scope of the media query itself
 .super-cta-button {
 	@extend .cta-button;
 	font-size: em(20px);
