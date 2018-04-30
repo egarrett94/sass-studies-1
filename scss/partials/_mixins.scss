@@ -1,4 +1,25 @@
 
+@mixin pastry-pizza {
+	@if $brand == pastry-pizza {
+		//add all styles passed into this mixin
+		@content;
+	}
+}
+
+@mixin rogers-rovers {
+	@if $brand == rogers-rovers {
+		//add all styles passed into this mixin
+		@content;
+	}
+}
+
+@mixin blue-beans {
+	@if $brand == blue-beans {
+		//add all styles passed into this mixin
+		@content;
+	}
+}
+
 @mixin tiny-screens() {
 	@media only screen and (max-width: 320px) {
 		@content;

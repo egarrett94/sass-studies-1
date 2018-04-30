@@ -2,6 +2,10 @@
 // allowed values: Dark, Light, Default
 $theme: Light;
 
+// this can help separate various clients styles
+// allowed values: blue-beans, rogers-rovers, pastry-pizza
+$brand: rogers-rovers; 
+
 // colors
 $text-color: #222222;
 $theme-color: #170a48;
