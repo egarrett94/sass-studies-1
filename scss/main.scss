@@ -56,14 +56,18 @@ $contrast: high;
 
 body {
   font-family: sans-serif;
-  @if $contrast == high {
-	color: black;
-  } @else if $contrast == low {
-  	color: #999;
-  } @else {
-  	color: $text-color;
-  }
-  
+ //  @if $contrast == high {
+	// color: black;
+ //  } @else if $contrast == low {
+ //  	color: #999;
+ //  } @else {
+ //  	color: $text-color;
+ //  }
+
+  background-color: $body-background-color;
+
+  color: $text-color;
+
   // color: rgb(10, 15, 50);
   // background-color: hsl(60, 50%, 100%);
   font-size: em(18px); //this makes font-size on .css file to 1.125 em

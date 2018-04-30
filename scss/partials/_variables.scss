@@ -1,3 +1,7 @@
+// theme
+// allowed values: Dark, Light, Default
+$theme: Light;
+
 // colors
 $text-color: #222222;
 $theme-color: #170a48;
@@ -5,6 +9,27 @@ $secondary-color: #f27731;
 $ternary-color: #ccf962;
 $link-color: $secondary-color;
 $menu-item: white;
+$body-background-color: white;
+
+@if $theme == Dark {
+	//override default colors w new colors
+	$text-color: #fff;
+	$body-background-color: #22222a;
+	$theme-color: #42424a;
+	$secondary-color: #c24721;
+	$ternary-color: #698932;
+	$link-color: $secondary-color;
+	$menu-item: white;
+} @else if $theme == Light {
+	$text-color: #000;
+	$body-background-color: #fff;
+	$theme-color: #372a27;
+	$secondary-color: #d26741;
+	$ternary-color: #b9da63;
+	$link-color: $secondary-color;
+	$menu-item: white;
+} 
+
 
 // font faces
 $text-font: 'Open Sans', Arial, sans-serif;
